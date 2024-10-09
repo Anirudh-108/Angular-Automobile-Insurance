@@ -1,37 +1,64 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../../../service/customer.service';
 import { RouterLink } from '@angular/router';
+import { PolicyService } from '../../../service/policy.service';
 
 @Component({
   selector: 'app-customer-documents',
   standalone: true,
-  imports: [NgIf, NgFor,RouterLink],
+  imports: [NgIf, NgFor, RouterLink],
   templateUrl: './customer-documents.component.html',
   styleUrl: './customer-documents.component.css',
 })
-export class CustomerDocumentsComponent {
-  title: string = '';
-  price: string = '';
+export class CustomerDocumentsComponent implements OnInit {
   show: boolean = false;
   file: File = null;
-  imageMsg: string = '';
-  images: string[] = [];
-  constructor(private customerService: CustomerService) {}
+
+  aadharMsg: string = '';
+  vehicleMsg: string = '';
+
+  modelName: string = '';
+
+  constructor(
+    private customerService: CustomerService,
+    private policyService: PolicyService
+  ) {}
+
+  ngOnInit(): void {
+    this.policyService.vehicleInfo$.subscribe((vehicle) => {
+      this.modelName = vehicle.modelName;
+    });
+  }
 
   onChange(event: any) {
     this.file = event.target.files[0];
   }
 
-  onUpload() {
+  onUploadAadhar() {
     let formData = new FormData();
+    let token = localStorage.getItem('token');
     formData.set('file', this.file);
-    this.customerService.uploadImage(formData, 1).subscribe({
+    this.customerService.uploadAadhar(formData, token).subscribe({
       next: (data) => {
-        this.images.push(this.file.name);
-        this.imageMsg = 'Image ' + this.file.name + ' is uploaded';
+        this.aadharMsg = 'Aadhar card uploaded successfully';
         this.file = null;
       },
     });
+  }
+
+  onUploadVehicleRc() {
+    let formData = new FormData();
+    let token = localStorage.getItem('token');
+    let model=this.modelName
+    formData.set('file', this.file);
+    this.customerService
+      .uploadVehicleRc(model,formData, token)
+      .subscribe({
+        next: (data) => {
+          this.vehicleMsg = 'Vehicle RC uploaded successfully';
+          this.file = null;
+        },
+      });
   }
 }

@@ -26,28 +26,45 @@
       <p>Please upload your Aadhaar Card and Vehicle RC</p>
 
       <div class="upload-section">
+        <div class="alert alert-success" *ngIf="aadharMsg != ''">
+          {{ aadharMsg }}
+        </div>
         <label for="aadhaar">Aadhaar Card:</label>
         <input
           type="file"
           id="aadhaar"
           class="upload-input"
           accept=".jpg,.jpeg,.png,.pdf"
+          (change)="onChange($event)"
           required
+          #aadhaarInput
         />
       </div>
+      <button class="upload-btn" (click)="onUploadAadhar()">
+        Upload Aadhar Card
+      </button>
 
-      <div class="upload-section">
+      <div class="upload-section section-2">
+        <div class="alert alert-success" *ngIf="vehicleMsg != ''">
+          {{ vehicleMsg }}
+        </div>
         <label for="vehicle-rc">Vehicle RC:</label>
         <input
           type="file"
           id="vehicle-rc"
           class="upload-input"
           accept=".jpg,.jpeg,.png,.pdf"
+          (change)="onChange($event)"
           required
+          #vehicleRcInput
         />
       </div>
 
-      <button class="upload-btn" routerLink="/buy-policy-form">Upload</button>
+      <button class="upload-btn" (click)="onUploadVehicleRc()">
+        Upload Vehicle RC
+      </button>
+
+      <button class="upload-btn-main" [disabled]="!aadhaarInput.value || !vehicleRcInput.value" routerLink="/buy-policy-form">Go to Checkout</button>
     </div>
 
     <li></li>

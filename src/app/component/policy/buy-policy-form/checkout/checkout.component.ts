@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PolicyService } from '../../../../service/policy.service';
+import { CustomerService } from '../../../../service/customer.service';
 
 @Component({
   selector: 'app-checkout',
@@ -10,6 +11,9 @@ import { PolicyService } from '../../../../service/policy.service';
   styleUrl: './checkout.component.css',
 })
 export class CheckoutComponent {
+  name: string;
+  email: string;
+
   vehicleName: string;
   registrationNo: string;
 
@@ -18,9 +22,17 @@ export class CheckoutComponent {
   premiumAmount: number;
   termLength: number;
 
-  constructor(private policyService: PolicyService) {}
+  constructor(
+    private customerService: CustomerService,
+    private policyService: PolicyService
+  ) {}
 
   ngOnInit(): void {
+    this.customerService.customerInfo$.subscribe((customer) => {
+      this.name = customer.name;
+      this.email = customer.email;
+    });
+
     this.policyService.vehicleInfo$.subscribe((vehicle) => {
       this.vehicleName = vehicle.manufacturerName + ' ' + vehicle.modelName;
       this.registrationNo = vehicle.registrationNo;

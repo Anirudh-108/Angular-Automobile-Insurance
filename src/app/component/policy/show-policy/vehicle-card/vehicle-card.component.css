@@ -17,8 +17,8 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   border: 1px solid #e0e0e0;
-  margin-top: 9rem;
-  margin-left: 6.5rem;
+  margin-top: 7rem;
+  margin-left: 11.9rem;
 }
 .vehicle-info {
   max-width: 300px;
@@ -45,5 +45,5 @@ body {
 
 .vehicle-card:hover {
   transform: scale(1.01);
-  box-shadow: 0 4px 15px #aaaaaf;
+  box-shadow: 0 4px 15px #C2D9FF;
 }
