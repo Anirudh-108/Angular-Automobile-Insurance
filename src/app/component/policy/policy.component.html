@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<section class="autoshield-section">
+  <div class="autoshield-content">
+    <div class="row">
+      <div class="col-7">
+        <div class="row">
+          <div class="description">
+            <h2>
+              Let's find you <br />the
+              <span class="highlight">Best Insurance</span>
+            </h2>
+            <p>Choose the vehicle that best matches your insurance needs.</p>
+          </div>
+        </div>
+        <div class="row card-container">
+          <div class="card col-6 car">
+            <button class="btn" (click)="onClick('Car')">
+              <a routerLink="/vehicle-form">
+                <img
+                  src="images/car.png"
+                  alt="Car"
+                />
+                <span>Car</span>
+              </a>
+            </button>
+          </div>
+          <div class="card col-6 bike">
+            <button class="btn" (click)="onClick('Bike')">
+              <a routerLink="/vehicle-form">
+                <img
+                  src="images/bike.png"
+                  alt="Bike"
+                />
+                <span>Bike</span>
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="features col-5">
+        <div class="feature-card">
+          <h3>🎉 Over 9 million</h3>
+          <p>Customers trust us & have bought their insurance on AutoShield</p>
+        </div>
+        <div class="feature-card">
+          <h3>🔍 50+ insurers</h3>
+          <p>
+            Partnered with us so that you can compare easily & transparently
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>💰 Great Price</h3>
+          <p>For all kinds of insurance plans available online</p>
+        </div>
+        <div class="feature-card">
+          <h3>👩‍💼 Claims</h3>
+          <p>
+            Support built in with every policy for help, when you need it the
+            most
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

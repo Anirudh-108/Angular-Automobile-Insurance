@@ -1,0 +1,106 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  font-family: "Poppins", sans-serif;
+}
+
+p,
+li,
+label {
+  font-family: "Urbanist", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  color: var(--para-color);
+  line-height: 1.5;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.autoshield-advantages {
+    padding: 45px;
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 35rem;
+}
+
+.advantages-content {
+    padding-top: 3.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.advantages-content h2 {
+    font-size: 2em;
+    color: #190482;
+    margin-bottom: 10px;
+}
+
+.advantages-content p {
+    padding-top: 1rem;
+    font-size: 1.1em;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
+}
+
+.know-more {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.know-more:hover {
+    text-decoration: underline;
+}
+
+.advantages-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.advantage-card {
+    background-color: #f3f8fe;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: calc(20% - 20px);
+    box-sizing: border-box;
+}
+
+.advantage-card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px #aaaaaf;
+}
+
+.advantage-card img {
+    max-width: 80px;
+    margin-bottom: 15px;
+}
+
+.advantage-card h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.advantage-card p {
+    font-size: 1em;
+    color: #555;
+}

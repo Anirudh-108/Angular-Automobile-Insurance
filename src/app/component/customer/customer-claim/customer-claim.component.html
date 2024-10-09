@@ -1,0 +1,62 @@
+<app-customer-navbar></app-customer-navbar>
+<section class="autoshield-section">
+  <div class="autoshield-content">
+    <div class="row">
+      <div class="col-7">
+        <div class="row">
+          <div class="description">
+            <h2>
+              Manage Your Claims <br />
+              <span class="highlight">Easily</span>
+            </h2>
+            <p>
+              Select an option to file a new claim or track the status of your
+              existing claim.
+            </p>
+          </div>
+        </div>
+        <div class="row card-container">
+          <div class="card track">
+            <button class="btn" (click)="onClick('Bike')">
+              <a routerLink="/">
+                <img src="images/file-claim.png" alt="Bike" />
+                <span>File a new claim</span>
+              </a>
+            </button>
+          </div>
+          <div class="card track">
+            <button class="btn" (click)="onClick('Bike')">
+              <a routerLink="/">
+                <img src="images/track-claim.png" alt="Bike" />
+                <span>Track existing claim</span>
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="features col-5">
+        <div class="feature-card">
+          <h3>🎉 Over 9 million</h3>
+          <p>Customers trust us & have bought their insurance on AutoShield</p>
+        </div>
+        <div class="feature-card">
+          <h3>🔍 50+ insurers</h3>
+          <p>
+            Partnered with us so that you can compare easily & transparently
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>💰 Great Price</h3>
+          <p>For all kinds of insurance plans available online</p>
+        </div>
+        <div class="feature-card">
+          <h3>👩‍💼 Claims</h3>
+          <p>
+            Support built in with every policy for help, when you need it the
+            most
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

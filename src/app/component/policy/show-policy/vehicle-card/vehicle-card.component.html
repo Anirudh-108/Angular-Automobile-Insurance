@@ -1,0 +1,9 @@
+<div class="vehicle-card">
+    <div class="vehicle-info">
+        <h2>{{vehicle_name}}</h2>
+        <p>{{registration_no}} <span>|</span> Registered in {{manufacturing_year}}</p>
+    </div>
+    <div class="vehicle-icon">
+        <img [src]="vehicle_type=='Car' ? 'images/car.png' : 'images/bike.png'" alt="Vehicle Icon">
+    </div>
+</div>

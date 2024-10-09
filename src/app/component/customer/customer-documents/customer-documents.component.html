@@ -1,0 +1,64 @@
+<!-- <ul *ngIf="images?.length > 0">
+    <div class="alert alert-warning">
+    <h4>Uploaded Images: </h4>
+    <div *ngFor="let i of images">
+        <div>
+            <li>{{i}}</li>
+        </div>
+    </div>
+    </div>
+</ul>
+<div class="mt-4" *ngIf="show">
+    <hr>
+    <div class="alert alert-primary" *ngIf="imageMsg != ''">
+        {{imageMsg}}
+    </div>
+    <input type="file" (change)="onChange($event)">
+    <button (click)="onUpload()" >Upload Image</button>
+</div> -->
+
+<!-- -------------------------------------------------- -->
+
+<div class="area">
+  <ul class="circles">
+    <div class="card">
+      <h2>Upload Documents</h2>
+      <p>Please upload your Aadhaar Card and Vehicle RC</p>
+
+      <div class="upload-section">
+        <label for="aadhaar">Aadhaar Card:</label>
+        <input
+          type="file"
+          id="aadhaar"
+          class="upload-input"
+          accept=".jpg,.jpeg,.png,.pdf"
+          required
+        />
+      </div>
+
+      <div class="upload-section">
+        <label for="vehicle-rc">Vehicle RC:</label>
+        <input
+          type="file"
+          id="vehicle-rc"
+          class="upload-input"
+          accept=".jpg,.jpeg,.png,.pdf"
+          required
+        />
+      </div>
+
+      <button class="upload-btn" routerLink="/buy-policy-form">Upload</button>
+    </div>
+
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>

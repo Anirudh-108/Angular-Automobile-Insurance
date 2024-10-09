@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: #7752fe;
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  width: 40%;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+button {
+  background-color: #7752fe;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: #6847da;
+}
+
+.google-btn {
+  background-color: white;
+  border: 1px solid grey; /* Updated border to grey */
+  color: black; /* Text color is black */
+  width: 70%;
+  margin-left: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px; /* Rounded corners for better styling */
+  cursor: pointer; /* Cursor changes to pointer for better UX */
+  text-decoration: none; /* Remove text underline */
+}
+
+.google-btn:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increased shadow on hover */
+  background-color: #f0f0f0; /* Light grey background on hover */
+}
+
+.google-btn img {
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.google-icon {
+  width: 10px;
+  margin-right: 10px;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+small{
+  color: red;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-container input[type="password"], .password-container input[type="text"] {
+  padding-right: 40px; /* add more space for the eye button */
+  width: 100%; /* make sure the input field takes up the full width */
+  box-sizing: border-box; /* include padding and border in width calculation */
+}
+
+.eye-button {
+  position: absolute;
+  top: 50%; /* center the eye button vertically */
+  transform: translateY(-50%);
+  right: 10px;
+  cursor: pointer;
+}
+
+.eye-button img {
+  width: 27px; /* adjust the image size to your liking */
+  height: 24px;
+}

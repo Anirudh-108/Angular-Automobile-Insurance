@@ -1,0 +1,180 @@
+<div class="area">
+  <ul class="circles">
+    <div class="form-container">
+      <h1>{{ vehicleType }} Information</h1>
+      <div id="vehicle-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="manufacturer_name">Manufacturer Name</label>
+            <input
+              type="text"
+              id="manufacturer_name"
+              name="manufacturer_name"
+              [(ngModel)]="manufacturerName"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="model_name">Model Name</label>
+            <input
+              type="text"
+              id="model_name"
+              name="model_name"
+              [(ngModel)]="modelName"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="variant">Variant</label>
+            <input
+              type="text"
+              id="variant"
+              name="variant"
+              [(ngModel)]="variant"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="base_price">Base Price</label>
+            <input
+              type="number"
+              id="base_price"
+              name="base_price"
+              [(ngModel)]="basePrice"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="policy_type">Policy Type</label>
+            <select
+              id="policy_type"
+              name="policy_type"
+              [(ngModel)]="policyType"
+              required
+            >
+              <option value="" disabled>Select Policy Type</option>
+              <option value="Comprehensive">Comprehensive</option>
+              <option value="ThirdParty">ThirdParty</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="transmission_type">Transmission Type</label>
+            <select
+              id="transmission_type"
+              name="transmission_type"
+              [(ngModel)]="transmissionType"
+              required
+            >
+              <option value="" disabled>Select Transmission Type</option>
+              <option value="Automatic">Automatic</option>
+              <option value="Manual">Manual</option>
+              <option value="Geared">Geared</option>
+              <option value="NonGeared">NonGeared</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="previous_claim">Previous Claim</label>
+            <select
+              id="previous_claim"
+              name="previous_claim"
+              [(ngModel)]="previousClaim"
+              required
+            >
+              <option value="" disabled>Select Previous Claim Status</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="vehicle_condition">Vehicle Condition</label>
+            <select
+              id="vehicle_condition"
+              name="vehicle_condition"
+              [(ngModel)]="vehicleCondition"
+              required
+            >
+              <option value="" disabled>Select Vehicle Condition</option>
+              <option value="New">New</option>
+              <option value="Used">Used</option>
+              <option value="Damaged">Damaged</option>
+              <option value="Rebuilt">Rebuilt</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="year_of_purchase">Year of Purchase</label>
+            <input
+              type="number"
+              id="year_of_purchase"
+              name="year_of_purchase"
+              min="1900"
+              max="2024"
+              [(ngModel)]="yearOfPurchase"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="zone_type">Zone Type</label>
+            <select
+              id="zone_type"
+              name="zone_type"
+              [(ngModel)]="zoneType"
+              required
+            >
+              <option value="" disabled>Select Zone Type</option>
+              <option value="ZoneA">ZoneA</option>
+              <option value="ZoneB">ZoneB</option>
+              <option value="ZoneC">ZoneC</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fuel_type">Fuel Type</label>
+            <select
+              id="fuel_type"
+              name="fuel_type"
+              [(ngModel)]="fuelType"
+              required
+            >
+              <option value="" disabled>Select Fuel Type</option>
+              <option value="Petrol">Petrol</option>
+              <option value="Diesel">Diesel</option>
+              <option value="EV">EV</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="registration_no">Registration No</label>
+            <input
+              type="text"
+              id="registration_no"
+              name="registration_no"
+              [(ngModel)]="registrationNo"
+              required
+            />
+          </div>
+        </div>
+        <button type="submit" (click)="onClick()">View Prices</button>
+      </div>
+    </div>
+
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>

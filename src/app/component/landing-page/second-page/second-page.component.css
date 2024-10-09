@@ -1,0 +1,67 @@
+.slider {
+  margin-left: 6rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 86%; /* Set width to 100% to take up the full screen */
+  height: 30rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.card-container-wrapper {
+  overflow: hidden;
+  align-items: center;
+  width: 100%; /* Set width to 100% */
+}
+
+.card-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: calc(300px * 5 + 40px * 5); /* Set width for cards and their margins */
+}
+
+.card {
+  min-width: 300px;
+  max-width: 300px;
+  margin: 0 10px;
+  padding: 20px;
+  background-color: #f3f8fe;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.001);
+  box-shadow: 0 4px 15px #aaaaaf;
+}
+
+.arrow {
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.arrow:hover {
+  background-color: #c2d9ff;
+  border-radius: 50%;
+}
+
+.slider h3 {
+  text-align: center;
+  color: #1a73e8;
+  font-family: "Poppins", sans-serif;
+}
+
+.slider p {
+  color: #555;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+}

@@ -1,0 +1,49 @@
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fc;
+  margin: 0;
+}
+.vehicle-card {
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  width: 70%;
+  padding: 15px 20px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  margin-top: 9rem;
+  margin-left: 6.5rem;
+}
+.vehicle-info {
+  max-width: 300px;
+}
+.vehicle-info h2 {
+  margin: 0;
+  margin-top: 0.8rem;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+.vehicle-info p {
+  margin: 4px 0;
+  color: #666;
+  font-size: 14px;
+}
+.vehicle-info p span {
+  margin: 0 10px;
+}
+.vehicle-icon img {
+  width: 80px;
+  height: 60px;
+}
+
+.vehicle-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 15px #aaaaaf;
+}

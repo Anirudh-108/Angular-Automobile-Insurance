@@ -1,0 +1,89 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="card-body">
+        <div class="flex justify-content-center main-card">
+          <p-stepper>
+            <p-stepperPanel header="Vehicle Info">
+              <ng-template
+                pTemplate="content"
+                let-nextCallback="nextCallback"
+                let-index="index"
+              >
+                <div class="flex flex-column h-12rem">
+                  <div
+                    class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium"
+                  >
+                  <app-vehicle-details></app-vehicle-details>
+                  </div>
+                </div>
+                <div class="flex pt-4 justify-content-end">
+                  <p-button
+                    label="Next"
+                    icon="pi pi-arrow-right"
+                    iconPos="right"
+                    (onClick)="nextCallback.emit()"
+                    class="main-button"
+                  />
+                </div>
+              </ng-template>
+            </p-stepperPanel>
+            <p-stepperPanel header="Personal Info">
+              <ng-template
+                pTemplate="content"
+                let-prevCallback="prevCallback"
+                let-nextCallback="nextCallback"
+                let-index="index"
+              >
+                <div class="flex flex-column h-12rem">
+                  <div
+                    class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium"
+                  >
+                  <app-personal-details></app-personal-details>
+                  </div>
+                </div>
+                <div class="flex pt-4 justify-content-between">
+                  <p-button
+                    label="Back"
+                    icon="pi pi-arrow-left"
+                    (onClick)="prevCallback.emit()"
+                  />
+                  <p-button
+                    label="Next"
+                    icon="pi pi-arrow-right"
+                    iconPos="right"
+                    (onClick)="nextCallback.emit()"
+                  />
+                </div>
+              </ng-template>
+            </p-stepperPanel>
+            <p-stepperPanel header="Checkout" >
+              <ng-template
+                pTemplate="content"
+                let-prevCallback="prevCallback"
+                let-index="index"
+              >
+                <div class="flex flex-column h-12rem" >
+                  <div
+                    class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium"
+                  >
+                    <app-checkout></app-checkout>
+                  </div>
+                </div>
+                <div class="flex pt-4 justify-content-start">
+                  <p-button
+                    label="Back"
+                    icon="pi pi-arrow-left"
+                    (onClick)="prevCallback.emit()"
+                  />
+                </div>
+              </ng-template>
+            </p-stepperPanel>
+          </p-stepper>
+        </div>
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>

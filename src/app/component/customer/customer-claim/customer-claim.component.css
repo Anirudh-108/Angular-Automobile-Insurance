@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  font-family: "Poppins", sans-serif;
+}
+
+p,
+li,
+a,
+label {
+  font-family: "Urbanist", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  color: var(--para-color);
+  line-height: 1.5;
+}
+
+.autoshield-section {
+  padding: 50px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  height: 40rem;
+}
+
+.autoshield-content {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  gap: 40px;
+}
+
+.description {
+  padding-top: 6rem;
+  flex: 1;
+  text-align: left;
+  width: 70%;
+}
+
+.description h2 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.highlight {
+  color: #7752fe; /* Highlighted color for 'AutoShield' */
+}
+
+.features {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding-top: 6rem;
+}
+
+.feature-card {
+  background-color: #f3f8fe;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 12rem;
+}
+
+.feature-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 15px #aaaaaf;
+}
+
+.feature-card h3 {
+  font-size: 1.2em;
+  color: #1a73e8;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  padding-top: 1.3rem;
+  font-size: 1em;
+  color: #555;
+}
+
+/* ------------------ */
+
+.card-container {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  margin-left: 2rem;
+}
+
+.card {
+  margin-top: 3rem;
+  background-color: #f5f5f7;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  cursor: pointer;
+  width: 70%;
+}
+
+.card:hover {
+  box-shadow: 0 4px 15px #8e8ffa;
+  transform: scale(1.05);
+}
+
+.card i {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card span {
+  padding-top: 1rem;
+  font-size: 27px;
+  font-weight: bold;
+  color: #7752fe;
+}
+
+.card-container img {
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 50%;
+  height: 3rem;
+}
+
+.description p {
+  font-family: "Urbanist", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.card-container a{
+  text-decoration: none;
+}
+
+.btn a img{
+  width: 3rem;
+}
+
+.car button a img{
+  width: 4rem;
+  height: 3rem;
+}
+
+.bike button a img{
+  width: 5rem;
+  padding-left: 0.5rem;
+}
+
+
+.track{
+    margin-top: 1rem;
+}

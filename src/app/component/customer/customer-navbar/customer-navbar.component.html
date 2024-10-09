@@ -1,0 +1,30 @@
+<nav>
+  <div class="wrapper">
+    <div class="logo"><a href="index.html">AutoShield</a></div>
+    <input type="radio" name="slider" id="menu-btn" />
+    <input type="radio" name="slider" id="close-btn" />
+    <ul class="nav-links other-links">
+      <label for="close-btn" class="btn close-btn"
+        ><i class="fas fa-times"></i
+      ></label>
+      <li><a routerLink="/customer">Home</a></li>
+      <li><a routerLink="/customer-policy">Policy</a></li>
+      <li><a routerLink="/claim">Claim</a></li>
+      <li><a routerLink="/renew">Renewal</a></li>
+      <label class="username">Welcome {{username}}</label>
+    </ul>
+
+    <div class="nav-links my-account">
+      <li>
+        <a href="javascript:void(0)"><img src="https://img.icons8.com/ios-filled/50/ffffff/user-male-circle.png" alt="User Icon"></a>
+        <input type="checkbox" id="showDrop" />
+        <ul class="drop-menu">
+          <li><a href="/view-profile">View Profile</a></li>
+          <li><a href="/my-policies">Show Status</a></li>
+          <li><a href="javascript:void(0)">Complain</a></li>
+          <li><a routerLink="/logout">Logout</a></li>
+        </ul>
+      </li>
+    </div>
+  </div>
+</nav>

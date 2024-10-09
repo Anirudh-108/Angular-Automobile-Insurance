@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  font-family: "Poppins", sans-serif;
+}
+
+p,
+li,
+a,
+label {
+  font-family: "Urbanist", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  color: var(--para-color);
+  line-height: 1.5;
+}
+
+html,
+body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+}
+
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 6rem;
+  padding: 1rem;
+}
+
+.summary-section,
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.summary-card,
+.dashboard-card {
+  flex: 1 1 calc(25% - 1.5rem); /* Ensure cards fit within container */
+  min-width: 220px;
+  max-width: 300px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.summary-card img,
+.dashboard-card img {
+  width: 100%;
+  height: auto;
+  max-width: 30px; /* Ensure image doesn't overflow */
+  margin: 0 auto 1rem;
+}
+
+.summary-card {
+  margin-top: 0.3rem;
+  height: 8rem;
+}
+
+.dashboard-card {
+  margin-top: 3rem;
+  height: 16.3rem;
+}
+
+.dashboard-card img {
+  max-width: 100%;
+  border-radius: 10px;
+  width: 4rem;
+}
+
+.summary-card:hover,
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button {
+  background-color: #7752fe;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 12rem;
+  height: 3rem;
+  margin-top:-2rem;
+}
+
+.cta-button:hover {
+  background-color: #6847da;
+  transform: translateY(-3px);
+}
+
+p {
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card p {
+  margin-top: 0.3rem;
+  font-size: 1rem;
+}
+
+.dashboard-card p {
+  font-size: 1rem;
+}

@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer {
+  background-color: #0B192C;
+  color: #ffffff;
+  padding: 40px 20px;
+}
+
+.footer .container {
+  padding-top: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer__col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer__title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.footer__col p{
+width: 75%;
+}
+
+.footer__list,
+.footer__contact,
+.footer__social {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__list li,
+.footer__contact li,
+.footer__social li {
+  margin-bottom: 10px;
+}
+
+.footer__list a,
+.footer__social a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer__list a:hover,
+.footer__social a:hover {
+  color: #00bcd4;
+}
+
+.footer__contact a{
+  text-decoration: none;
+}
+
+.footer__contact a:hover{
+  color: #00bcd4;
+}
+
+.footer__contact img,
+.footer__social img {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.footer__bottom {  
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #3f4e63;
+  padding-top: 20px;
+  font-size: 0.9rem;
+}

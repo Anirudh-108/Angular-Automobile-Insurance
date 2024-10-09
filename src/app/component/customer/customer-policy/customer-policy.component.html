@@ -1,0 +1,70 @@
+<app-customer-navbar></app-customer-navbar>
+
+<div class="container">
+  <div class="left-section">
+    <h2>Active <span style="color: #7752fe">policies</span></h2>
+    <div class="policy-card">
+      <div class="policy-info">
+        <img src="images/active-policy.png" alt="Policy Image" />
+        <div>
+          <h3>Mahindra XUV 300</h3>
+          <p>Comprehensive insurance</p>
+        </div>
+      </div>
+      <div class="policy-actions">
+        <button>View</button>
+        <button>Download</button>
+      </div>
+    </div>
+    <div class="policy-card">
+      <div class="policy-info">
+        <img src="images/active-policy.png" alt="Policy Image" />
+        <div>
+          <h3>Honda Livo</h3>
+          <p>ThirdParty insurance</p>
+        </div>
+      </div>
+      <div class="policy-actions">
+        <button>View</button>
+        <button>Download</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <h3>Buy insurance</h3>
+    <div class="row card-container">
+      <div class="card col-6 car">
+        <button class="btn" (click)="onClick('Car')">
+          <a routerLink="/vehicle-form">
+            <img src="images/car.png" alt="Car" />
+            <span>Car</span>
+          </a>
+        </button>
+      </div>
+      <div class="card col-6 bike">
+        <button class="btn" (click)="onClick('Bike')">
+          <a routerLink="/vehicle-form">
+            <img src="images/bike.png" alt="Bike" />
+            <span>Bike</span>
+          </a>
+        </button>
+      </div>
+    </div>
+    <div class="ad-card purple first">
+      <p>Got a car?</p>
+      <span>Save big on your car insurance.</span>
+      <button (click)="onClick('Car')">
+        <a routerLink="/vehicle-form">Insure</a>
+      </button>
+    </div>
+
+    <div class="ad-card green second">
+      <p>Got a bike?</p>
+      <span>Save big on your bike insurance.</span>
+      <button (click)="onClick('Bike')">
+        <a routerLink="/vehicle-form">Insure</a>
+      </button>
+    </div>
+  </div>
+</div>

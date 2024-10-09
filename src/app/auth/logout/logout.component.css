@@ -1,0 +1,87 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f2f5;
+}
+
+.logout-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.logout-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 50rem;
+  width: 50rem;
+}
+
+.logout-box h1 {
+  padding-bottom: 1rem;
+}
+
+.logout-icon {
+  font-size: 70px;
+  color: #7752fe;
+  margin-bottom: 20px;
+}
+
+.logout-box h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.logout-box p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn {
+  text-decoration: none;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 25px;
+  transition: background 0.3s ease;
+}
+
+.home-btn {
+  margin-left: -1rem;
+  background: #7752fe;
+}
+
+.home-btn:hover {
+  background: #6847da;
+}
+
+.login-btn {
+  margin-left: -13rem;
+  background: #7752fe;
+}
+
+.login-btn:hover {
+  background: #6847da;
+}
+
+.background-blur {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}

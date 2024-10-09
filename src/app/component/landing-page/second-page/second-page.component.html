@@ -1,0 +1,12 @@
+<div class="slider">
+  <button class="arrow left" (click)="moveSlides(-1)">&#10094;</button>
+  <div class="card-container-wrapper">
+      <div class="card-container" [ngStyle]="{'transform': 'translateX(' + offset + 'px)'}">
+          <div class="card" *ngFor="let card of cards">
+              <h3>{{ card.title }}</h3>
+              <p>{{ card.description }}</p>
+          </div>
+      </div>
+  </div>
+  <button class="arrow right" (click)="moveSlides(1)">&#10095;</button>
+</div>

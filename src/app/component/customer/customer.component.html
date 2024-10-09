@@ -1,0 +1,60 @@
+<div class="row">
+  <app-customer-navbar></app-customer-navbar>
+</div>
+<div class="row">
+  <main class="dashboard">
+    <section class="welcome-section">
+      <h2>
+        Welcome, <span style="color: #7752fe">{{ name }}!</span>
+      </h2>
+      <p>Get a quick summary of your insurance portfolio.</p>
+    </section>
+
+    <section class="summary-section">
+      <div class="summary-card">
+        <img src="images/small-active.png" alt="Active Policies" />
+        <h5>Active Policies</h5>
+        <p><strong>3</strong> Active Policies</p>
+      </div>
+      <div class="summary-card">
+        <img src="images/expired.png" alt="Expired Policies" />
+        <h5>Expired Policies</h5>
+        <p><strong>1</strong> Expired Policy</p>
+      </div>
+      <div class="summary-card">
+        <img src="images/claims-filed.png" alt="Claims Filed" />
+        <h5>Claims Filed</h5>
+        <p><strong>2</strong> Claims Filed</p>
+      </div>
+    </section>
+
+    <section class="quick-links">
+      <div class="dashboard-card">
+        <img src="images/active.png" alt="Active Policies" />
+        <h4>Active Policies</h4>
+        <p>View and manage your active policies.</p>
+        <button class="cta-button" routerLink="/customer-policy">
+          View Policies
+        </button>
+      </div>
+
+      <div class="dashboard-card">
+        <img src="images/claim.png" alt="Claims" />
+        <h4>Claims</h4>
+        <p>Check the status of your claims or file a new claim.</p>
+        <button class="cta-button" routerLink="/claim">
+          View Claims
+        </button>
+      </div>
+
+      <div class="dashboard-card">
+        <img src="images/renew.png" alt="renew" />
+        <h4>Renew Policy</h4>
+        <p>Renew expired policies now and avoid interruptions.</p>
+        <button class="cta-button" routerLink="/renew">
+          Manage Payments
+        </button>
+      </div>
+    </section>
+  </main>
+</div>

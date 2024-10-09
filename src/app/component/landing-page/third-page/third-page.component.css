@@ -1,0 +1,88 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  font-family: "Poppins", sans-serif;
+}
+
+p,
+li,
+a,
+label {
+  font-family: "Urbanist", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  color: var(--para-color);
+  line-height: 1.5;
+}
+
+.autoshield-section {
+  padding: 50px;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  height: 40rem;
+}
+
+.autoshield-content {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  gap: 40px;
+}
+
+.description {
+  flex: 1;
+  text-align: left;
+}
+
+.description h2 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.highlight {
+  color: #7752fe; /* Highlighted color for 'AutoShield' */
+}
+
+.features {
+  margin-right: 0.5rem;
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.feature-card {
+  background-color: #f3f8fe;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 12rem;
+}
+
+.feature-card:hover {
+  /*   
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); */
+  transform: scale(1.01);
+  box-shadow: 0 4px 15px #aaaaaf;
+}
+
+.feature-card h3 {
+  font-size: 1.2em;
+  color: #1a73e8;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  padding-top: 1.3rem;
+  font-size: 1em;
+  color: #555;
+}
