@@ -11,17 +11,21 @@
       <li><a routerLink="/customer-policy">Policy</a></li>
       <li><a routerLink="/claim">Claim</a></li>
       <li><a routerLink="/renew">Renewal</a></li>
-      <label class="username">Welcome {{username}}</label>
+      <label class="username">Welcome {{ username }}</label>
     </ul>
 
     <div class="nav-links my-account">
       <li>
-        <a href="javascript:void(0)"><img src="https://img.icons8.com/ios-filled/50/ffffff/user-male-circle.png" alt="User Icon"></a>
+        <a href="javascript:void(0)"
+          ><img
+            src="https://img.icons8.com/ios-filled/50/ffffff/user-male-circle.png"
+            alt="User Icon"
+        /></a>
         <input type="checkbox" id="showDrop" />
         <ul class="drop-menu">
-          <li><a href="/view-profile">View Profile</a></li>
-          <li><a href="/my-policies">Show Status</a></li>
-          <li><a href="javascript:void(0)">Complain</a></li>
+          <li><a href="/view-profile">View profile</a></li>
+          <li><a href="/my-policies">My policies</a></li>
+          <li><a href="/complain-options">Raise an issue</a></li>
           <li><a routerLink="/logout">Logout</a></li>
         </ul>
       </li>

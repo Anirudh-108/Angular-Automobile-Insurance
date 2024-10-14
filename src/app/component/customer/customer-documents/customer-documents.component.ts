@@ -18,7 +18,18 @@ export class CustomerDocumentsComponent implements OnInit {
   aadharMsg: string = '';
   vehicleMsg: string = '';
 
-  modelName: string = '';
+  manufacturerName: string;
+  modelName: string;
+  variant: string;
+  yearOfPurchase: number;
+  basePrice: number;
+  previousClaim: string;
+  registrationNo: string;
+  vehicleType: string;
+  fuelType: string;
+  transmissionType: string;
+  vehicleCondition: string;
+  zoneType: string;
 
   constructor(
     private customerService: CustomerService,
@@ -28,6 +39,46 @@ export class CustomerDocumentsComponent implements OnInit {
   ngOnInit(): void {
     this.policyService.vehicleInfo$.subscribe((vehicle) => {
       this.modelName = vehicle.modelName;
+    });
+
+    this.policyService.vehicleInfo$.subscribe((vehicle) => {
+      this.manufacturerName = vehicle.manufacturerName;
+      this.modelName = vehicle.modelName;
+      this.variant = vehicle.variant;
+      this.yearOfPurchase = vehicle.yearOfPurchase;
+      this.basePrice = vehicle.basePrice;
+      this.previousClaim = vehicle.previousClaim;
+      this.registrationNo = vehicle.registrationNo;
+      this.fuelType = vehicle.fuelType;
+      this.transmissionType = vehicle.transmissionType;
+      this.vehicleCondition = vehicle.vehicleCondition;
+      this.zoneType = vehicle.zoneType;
+      this.vehicleType = vehicle.vehicleType;
+    });
+
+    let vehicleDetails = {
+      manufacturerName: this.manufacturerName,
+      modelName: this.modelName,
+      variant: this.variant,
+      yearOfPurchase: this.yearOfPurchase,
+      basePrice: this.basePrice,
+      previousClaim: this.previousClaim,
+      registrationNo: this.registrationNo,
+      fuelType: this.fuelType,
+      transmissionType: this.transmissionType,
+      vehicleCondition: this.vehicleCondition,
+      zoneType: this.zoneType,
+      vehicleType: this.vehicleType,
+    };
+
+    let token = localStorage.getItem('token');
+    this.customerService.addVehicle(vehicleDetails, token).subscribe({
+      next: (data) => {
+        console.log('vehicle added');
+      },
+      error: (err) => {
+        console.log(err);
+      },
     });
   }
 
@@ -50,15 +101,13 @@ export class CustomerDocumentsComponent implements OnInit {
   onUploadVehicleRc() {
     let formData = new FormData();
     let token = localStorage.getItem('token');
-    let model=this.modelName
+    let registrationNo = this.registrationNo;
     formData.set('file', this.file);
-    this.customerService
-      .uploadVehicleRc(model,formData, token)
-      .subscribe({
-        next: (data) => {
-          this.vehicleMsg = 'Vehicle RC uploaded successfully';
-          this.file = null;
-        },
-      });
+    this.customerService.uploadVehicleRc(registrationNo, formData, token).subscribe({
+      next: (data) => {
+        this.vehicleMsg = 'Vehicle RC uploaded successfully';
+        this.file = null;
+      },
+    });
   }
 }

@@ -31,7 +31,7 @@ a {
 .container {
   display: flex;
   padding: 20px;
-  max-width: 1200px;
+  max-width: 1150px;
   margin: auto;
   gap: 20px;
 }
@@ -284,4 +284,40 @@ a {
 
 .below{
     margin-top: -3rem;
+}
+
+.length-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.length-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 15px #aaaaaf;
+}
+
+.length-card-content {
+  padding: 10px;
+}
+
+.length-card h2 {
+  font-size: 24px;
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+.length-card p {
+  font-size: 16px;
+  color: #718096;
+}
+
+.no-expired-policy {
+  border-left: 5px solid #7752fe; /* Green border for emphasis */
 }

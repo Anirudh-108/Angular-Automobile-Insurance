@@ -2,7 +2,7 @@
   <ul class="circles">
     <div class="background">
       <div class="profile-container">
-        <h2>Profile Information</h2>
+        <h2>Profile Details</h2>
         <div class="profile-card">
           <div class="profile-row">
             <label for="name">Name:</label>
@@ -40,7 +40,11 @@
           </div>
 
           <div class="edit-button-container">
-            <button class="edit-button" (click)="editProfile()">
+            <button class="edit-button" routerLink="/customer">
+              Back
+            </button>
+            &nbsp;&nbsp;&nbsp;
+            <button class="edit-button" routerLink="/edit-profile">
               Edit Profile
             </button>
           </div>

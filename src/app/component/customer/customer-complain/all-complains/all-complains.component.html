@@ -1,0 +1,42 @@
+<div class="nav-div">
+  <h2 class="heading">All <span style="color: #7752fe">Complaints</span> </h2>
+</div>
+
+<table class="table modern-table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Complaint type</th>
+      <th scope="col">Complaint status</th>
+      <th scope="col">Policy type</th>
+      <th scope="col">Vehicle name</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of complaints">
+      <td>{{ c.complaintId }}</td>
+      <td>{{ c.complaintType }}</td>
+      <td>{{ c.complaintStatus }}</td>
+      <td>{{ c.policyType }}</td>
+      <td>{{ c.vehcleName }}</td>
+      <td>{{ c.description }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center modern-pagination">
+    <li class="page-item">
+      <button class="page-link" [disabled]="first == true" (click)="onPrev()">Prev</button>
+    </li>
+    <span *ngFor="let n of numArry">
+      <button class="page-link" (click)="onPageNumberClick(n)">{{ n + 1 }}</button>
+    </span>
+    <li class="page-item">
+      <button class="page-link" [disabled]="last == true" (click)="onNext()">Next</button>
+    </li>
+  </ul>
+</nav>
+
+<button class="btn btn-info back-button" routerLink="/complain-options">Back</button>

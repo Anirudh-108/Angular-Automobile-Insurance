@@ -1,1 +1,72 @@
-<p>customer-complain works!</p>
+<app-customer-navbar></app-customer-navbar>
+
+<div class="container">
+  <div class="row">
+    <div class="col-7 policy-list">
+      <h2>
+        Select a <span style="color: #7752fe">Policy</span> for Your Complaint
+      </h2>
+      <p class="para">
+        Choose the relevant policy from the list below to submit your complaint.
+      </p>
+
+      <div *ngIf="activePolicies.length == 0">
+        <div class="length-card no-expired-policy">
+          <div class="length-card-content">
+            <h2>No Policies Found</h2>
+            <p>
+              You currently don't have any active policies. Please add a
+              policy to get started.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="policy-card" *ngFor="let p of activePolicies">
+        <div class="policy-info">
+          <img src="images/active-policy.png" alt="Policy Image" />
+          <div>
+            <h3>{{ p.manufacturerName + " " + p.modelName }}</h3>
+            <p>{{ p.policyType }} insurance</p>
+          </div>
+        </div>
+        <div class="policy-actions">
+          <button (click)="onComplain(p.policyId)">Report an issue</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-5 complain-ad">
+      <div class="features">
+        <div class="feature-card">
+          <h3>⚡ Fast Response</h3>
+          <p>
+            Receive quick feedback on your complaints and issues with our 24/7
+            support system.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>🔧 Expert Assistance</h3>
+          <p>
+            Our dedicated team of professionals will guide you through resolving
+            any issue.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>📈 Transparent Tracking</h3>
+          <p>
+            Track the status of your complaint in real-time with our easy-to-use
+            system.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>🤝 Guaranteed Resolution</h3>
+          <p>
+            We ensure every issue is addressed promptly with clear solutions
+            provided.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

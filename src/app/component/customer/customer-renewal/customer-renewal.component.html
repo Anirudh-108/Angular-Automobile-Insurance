@@ -1,33 +1,30 @@
 <app-customer-navbar></app-customer-navbar>
 <div class="container">
   <div class="left-section">
-    <h2>Expired <span style="color: #7752fe">policies</span></h2>
-    <div class="policy-card">
-      <div class="policy-info">
-        <img src="images/expired-policy.png" alt="Policy Image" />
-        <div>
-          <h3>Mahindra XUV 300</h3>
-          <p>Comprehensive insurance</p>
+    <h2><span style="color: #7752fe">Expired</span> policies</h2>
+
+    <div *ngIf="policies.length==0">
+      <div class="length-card no-expired-policy">
+        <div class="length-card-content">
+          <h2>No Expired Policies</h2>
+          <p>
+            It looks like all your policies are active. Keep up the good work!
+          </p>
         </div>
-      </div>
-      <div class="policy-actions">
-        <button>Renew</button>
-        <button>View</button>
-        <button>Download</button>
       </div>
     </div>
-    <div class="policy-card">
+
+    <div class="policy-card" *ngFor="let p of policies">
       <div class="policy-info">
         <img src="images/expired-policy.png" alt="Policy Image" />
         <div>
-          <h3>Honda Livo</h3>
-          <p>ThirdParty insurance</p>
+          <h3>{{ p.manufacturerName + " " + p.modelName }}</h3>
+          <p>{{ p.policyType }} insurance</p>
         </div>
       </div>
       <div class="policy-actions">
-        <button>Renew</button>
-        <button>View</button>
-        <button>Download</button>
+        <button (click)="onView(p.policyId)">View</button>
+        <button (click)="onRenew(p.policyId)">Renew</button>
       </div>
     </div>
   </div>

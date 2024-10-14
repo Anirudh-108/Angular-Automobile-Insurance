@@ -1,0 +1,47 @@
+<div class="nav-div">
+    <h2 class="heading">All <span style="color: #7752fe">Claims</span> </h2>
+  </div>
+  
+  <table class="table modern-table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Claim amount</th>
+        <th scope="col">Claim date</th>
+        <th scope="col">Claim status</th>
+        <th scope="col">Policy type</th>
+        <th scope="col">Policy coverage amount</th>
+        <th scope="col">Vehicle name</th>
+        <th scope="col">Registration no.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of claims">
+        <td>{{ c.claimId }}</td>
+        <td>{{ c.claimAmount }}</td>
+        <td>{{ c.claimDate }}</td>
+        <td>{{ c.claimStatus }}</td>
+        <td>{{ c.policyType }}</td>
+        <td>{{ c.policyCoverageAmount }}</td>
+        <td>{{ c.vehicleName }}</td>
+        <td>{{ c.registrationNo }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center modern-pagination">
+      <li class="page-item">
+        <button class="page-link" [disabled]="first == true" (click)="onPrev()">Prev</button>
+      </li>
+      <span *ngFor="let n of numArry">
+        <button class="page-link" (click)="onPageNumberClick(n)">{{ n + 1 }}</button>
+      </span>
+      <li class="page-item">
+        <button class="page-link" [disabled]="last == true" (click)="onNext()">Next</button>
+      </li>
+    </ul>
+  </nav>
+  
+  <button class="btn btn-info back-button" routerLink="/claim">Back</button>
+  

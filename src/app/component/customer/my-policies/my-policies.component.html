@@ -1,88 +1,93 @@
-<div class="container">
-  <div class="left-section">
-    <div class="row">
-      <h2>Active <span style="color: #7752fe">policies</span></h2>
-      <div class="policy-card">
-        <div class="policy-info">
-          <img src="images/active-policy.png" alt="Policy Image" />
-          <div>
-            <h3>Mahindra XUV 300</h3>
-            <p>Comprehensive insurance</p>
+<div class="area">
+  <ul class="circles">
+    <div class="container">
+      <div class="left-section">
+        <div class="row">
+          <h2><span style="color: #190482">Active</span> policies</h2>
+
+          <div *ngIf="activePolicies.length == 0">
+            <div class="length-card no-expired-policy">
+              <div class="length-card-content">
+                <h2>No Policies Found</h2>
+                <p>
+                  You currently don't have any active policies. Please add a
+                  policy to get started.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-card" *ngFor="let p of activePolicies">
+            <div class="policy-info">
+              <img src="images/active-policy.png" alt="Policy Image" />
+              <div>
+                <h3>{{ p.manufacturerName + " " + p.modelName }}</h3>
+                <p>{{ p.policyType }} insurance</p>
+              </div>
+            </div>
+            <div class="policy-actions">
+              <button (click)="onView(p.policyId)">View</button>
+              <button>Download</button>
+            </div>
           </div>
         </div>
-        <div class="policy-actions">
-          <button>View</button>
-          <button>Download</button>
-        </div>
-      </div>
-      <div class="policy-card">
-        <div class="policy-info">
-          <img src="images/active-policy.png" alt="Policy Image" />
-          <div>
-            <h3>Honda Livo</h3>
-            <p>ThirdParty insurance</p>
+
+        <div class="row row-2">
+          <h2><span style="color: #190482">Expired</span> policies</h2>
+
+          <div *ngIf="expiredPolicies.length == 0">
+            <div class="length-card no-expired-policy">
+              <div class="length-card-content">
+                <h2>No Expired Policies</h2>
+                <p>
+                  It looks like all your policies are active. Keep up the good
+                  work!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-card" *ngFor="let p of expiredPolicies">
+            <div class="policy-info">
+              <img src="images/expired-policy.png" alt="Policy Image" />
+              <div>
+                <h3>{{ p.manufacturerName + " " + p.modelName }}</h3>
+                <p>{{ p.policyType }} insurance</p>
+              </div>
+            </div>
+            <div class="policy-actions">
+              <button (click)="onView(p.policyId)">View</button>
+              <button>Download</button>
+            </div>
           </div>
         </div>
-        <div class="policy-actions">
-          <button>View</button>
-          <button>Download</button>
-        </div>
       </div>
-    </div>
 
-    <div class="row row-2">
-      <h2>Expired <span style="color: #7752fe">policies</span></h2>
-      <div class="policy-card">
-        <div class="policy-info">
-          <img src="images/expired-policy.png" alt="Policy Image" />
-          <div>
-            <h3>Mahindra XUV 300</h3>
-            <p>Comprehensive insurance</p>
+      <div class="right-section">
+        <div class="row chart-container">
+          <div class="flex justify-content-center chart-item pie-chart">
+            <p-chart type="pie" [data]="specializationData" [options]="pieOptions"></p-chart>
           </div>
         </div>
-        <div class="policy-actions">
-          <button>Renew</button>
-          <button>View</button>
-          <button>Download</button>
+        <div class="row bar chart-container">
+          <div class="flex justify-content-center chart-item bar-chart">
+            <p-chart type="bar" [data]="aptData" [options]="barOptions"></p-chart>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="right-section">
-    <h3>Buy insurance</h3>
-    <div class="row card-container">
-      <div class="card col-6 car">
-        <button class="btn" (click)="onClick('Car')">
-          <a routerLink="/vehicle-form">
-            <img src="images/car.png" alt="Car" />
-            <span>Car</span>
-          </a>
-        </button>
-      </div>
-      <div class="card col-6 bike">
-        <button class="btn" (click)="onClick('Bike')">
-          <a routerLink="/vehicle-form">
-            <img src="images/bike.png" alt="Bike" />
-            <span>Bike</span>
-          </a>
-        </button>
-      </div>
-    </div>
-    <div class="ad-card purple first">
-      <p>Got a car?</p>
-      <span>Save big on your car insurance.</span>
-      <button (click)="onClick('Car')">
-        <a routerLink="/vehicle-form">Insure</a>
-      </button>
+      
+      
     </div>
 
-    <div class="ad-card green second">
-      <p>Got a bike?</p>
-      <span>Save big on your bike insurance.</span>
-      <button (click)="onClick('Bike')">
-        <a routerLink="/vehicle-form">Insure</a>
-      </button>
-    </div>
-  </div>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
 </div>

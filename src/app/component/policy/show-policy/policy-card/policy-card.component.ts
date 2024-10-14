@@ -13,6 +13,7 @@ export class PolicyCardComponent implements OnInit {
   policy_type: string;
   coverage_amount: number;
   premium_amount: number;
+  premium_amount_month:number;
   term_length: string;
   description: string;
 
@@ -27,7 +28,7 @@ export class PolicyCardComponent implements OnInit {
       basePrice: 0,
       fuelType: '',
       transmissionType: '',
-      previousClaim: false,
+      previousClaim: '',
       vehicleCondition: '',
       yearOfPurchase: 0,
       zoneType: '',
@@ -59,8 +60,9 @@ export class PolicyCardComponent implements OnInit {
         this.policy_type = data.policyType;
         this.coverage_amount = data.coverageAmount;
         this.premium_amount = data.premiumAmount;
+        
         this.term_length = data.termLength;
-        this.description = data.description;
+        this.description = data.description; 
       },
       error: (err) => {
         console.log(err);

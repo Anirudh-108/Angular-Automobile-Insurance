@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CustomerNavbarComponent } from "../customer-navbar/customer-navbar.component";
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-customer-claim',
   standalone: true,
-  imports: [CustomerNavbarComponent],
+  imports: [CustomerNavbarComponent,RouterLink],
   templateUrl: './customer-claim.component.html',
   styleUrl: './customer-claim.component.css'
 })

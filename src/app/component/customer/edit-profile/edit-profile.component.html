@@ -1,0 +1,44 @@
+<body>
+  <div class="container">
+    <h1>Edit Your Profile</h1>
+
+    <div class="form-container">
+      <label for="name">Name</label>
+      <div class="input-group">
+        <input type="text" id="name" required [(ngModel)]="name" />
+      </div>
+
+      <label for="email">Email</label>
+      <div class="input-group">
+        <input type="email" id="email" [(ngModel)]="email" required />
+      </div>
+
+      <label for="contact">Contact</label>
+      <div class="input-group">
+        <input type="text" id="contact" [(ngModel)]="contact" required />
+      </div>
+
+      <label for="address">Address</label>
+      <div class="input-group">
+        <input type="text" id="address" [(ngModel)]="streetDetails" required />
+      </div>
+
+      <label for="city">City</label>
+      <div class="input-group">
+        <input type="text" id="city" [(ngModel)]="city" required />
+      </div>
+
+      <label for="state">State</label>
+      <div class="input-group">
+        <input type="text" id="state" [(ngModel)]="state" required />
+      </div>
+
+      <label for="country">Country</label>
+      <div class="input-group">
+        <input type="text" id="country" [(ngModel)]="country" required />
+      </div>
+
+      <button type="submit" (click)="onEdit()">Edit Profile</button>
+    </div>
+  </div>
+</body>

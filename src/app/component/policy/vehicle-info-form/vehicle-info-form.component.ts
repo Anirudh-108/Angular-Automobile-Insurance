@@ -19,7 +19,7 @@ export class VehicleInfoFormComponent {
   basePrice: number;
   fuelType: string;
   transmissionType: string;
-  previousClaim: boolean;
+  previousClaim: string;
   vehicleCondition: string;
   yearOfPurchase: number;
   zoneType: string;
@@ -108,7 +108,7 @@ export class VehicleInfoFormComponent {
       this.zoneType,
       this.previousClaim,
       this.registrationNo,
-      policyType
+      policyType 
     );
   }
 }

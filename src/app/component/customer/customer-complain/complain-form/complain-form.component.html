@@ -1,0 +1,77 @@
+<div class="area">
+  <ul class="circles">
+    <div class="main-card">
+      <div class="complaint-form">
+        <h2>Submit Your Complaint</h2>
+
+        <div>
+          <!-- Complaint Type Dropdown -->
+          <div class="form-group">
+            <label for="complaintType">Complaint Type</label>
+            <select
+              id="complaintType"
+              name="complaintType"
+              class="form-control"
+              [(ngModel)]="complaintType"
+            >
+              <option value="" disabled selected>Select a type</option>
+              <option value="Billing_Error">Billing Issue</option>
+              <option value="Policy_Cancellation">Policy Issue</option>
+              <option value="Coverage_Dispute">Coverage Issue</option>
+              <option value="Claim_Issue">Claims Issue</option>
+              <option value="Other">Other Issue</option>
+            </select>
+          </div>
+
+          <!-- Complaint Status Dropdown -->
+          <div class="form-group">
+            <label for="complaintStatus">Complaint Status</label>
+            <select
+              id="complaintStatus"
+              name="complaintStatus"
+              class="form-control"
+              [(ngModel)]="complaintStatus"
+            >
+              <option value="" disabled selected>Select a status</option>
+              <option value="Open">Open</option>
+              <option value="In_Progress">In Progress</option>
+              <option value="Resolved">Resolved</option>
+              <option value="Closed">Closed</option>
+            </select>
+          </div>
+
+          <!-- Complaint Description -->
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              id="description"
+              name="description"
+              rows="4"
+              class="form-control"
+              placeholder="Describe your issue..."
+              [(ngModel)]="description"
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="form-group">
+            <button type="submit" class="btn-submit" routerLink="/complain">
+              Back</button
+            >&nbsp;&nbsp;
+            <button type="submit" class="btn-submit" (click)="onClick()">Submit Complaint</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>

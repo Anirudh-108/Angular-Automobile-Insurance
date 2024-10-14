@@ -20,6 +20,28 @@ export class CustomerService {
     );
   }
 
+  updateCustomer(customer: any, token: any): Observable<any> {
+    return this.http.put('http://localhost:8082/customer/update', customer, {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + token),
+    });
+  }
+
+  addComplaint(complaint: any, token: any, id: any): Observable<any> {
+    return this.http.post(
+      'http://localhost:8082/complaint/add-complaint/' + id,
+      complaint,
+      {
+        headers: new HttpHeaders().set('Authorization', 'Bearer ' + token),
+      }
+    );
+  }
+
+  addVehicle(vehicle: any, token: any): Observable<any> {
+    return this.http.post('http://localhost:8082/vehicle/add', vehicle, {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + token),
+    });
+  }
+
   uploadAadhar(formData: FormData, token: string) {
     return this.http.post(
       'http://localhost:8082/customerDocuments/upload',

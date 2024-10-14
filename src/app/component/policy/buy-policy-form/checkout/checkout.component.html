@@ -1,5 +1,5 @@
 <div class="form-container">
-    <h2>Checkout</h2>
+    <h2><span style="color: #7752fe">Checkout</span></h2>
     <div>
         <div class="form-group">
             <label for="full-name">Full Name</label>
@@ -45,7 +45,7 @@
             By proceeding, you agree to the
             <a href="javascript:void(0)">Terms & Conditions</a>
         </p>
-        <button type="submit" class="continue-button" onclick="navigateNext()">
+        <button type="submit" class="continue-button" (click)="onBuy(policyType)">
             Buy Policy
         </button>
     </div>

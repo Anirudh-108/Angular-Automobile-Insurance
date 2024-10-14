@@ -21,6 +21,18 @@ import { BuyPolicyFormComponent } from './component/policy/buy-policy-form/buy-p
 import { CustomerProfileComponent } from './component/customer/customer-profile/customer-profile.component';
 import { MyPoliciesComponent } from './component/customer/my-policies/my-policies.component';
 import { CustomerDocumentsComponent } from './component/customer/customer-documents/customer-documents.component';
+import { EditProfileComponent } from './component/customer/edit-profile/edit-profile.component';
+import { BuyMsgComponent } from './component/policy/buy-policy-form/buy-msg/buy-msg.component';
+import { PolicyInfoComponent } from './component/customer/policy-info/policy-info.component';
+import { CustomerComplainComponent } from './component/customer/customer-complain/customer-complain.component';
+import { ComplainFormComponent } from './component/customer/customer-complain/complain-form/complain-form.component';
+import { ComplainOptionsComponent } from './component/customer/customer-complain/complain-options/complain-options.component';
+import { AllComplainsComponent } from './component/customer/customer-complain/all-complains/all-complains.component';
+import { AllClaimsComponent } from './component/customer/customer-claim/all-claims/all-claims.component';
+import { RenewPolicyFormComponent } from './component/customer/customer-renewal/renew-policy-form/renew-policy-form.component';
+import { RenewMsgComponent } from './component/customer/customer-renewal/renew-policy-form/renew-msg/renew-msg.component';
+import { RenewPolicyInfoComponent } from './component/customer/customer-renewal/renew-policy-info/renew-policy-info.component';
+import { ViewPolicyComponent } from './component/customer/my-policies/view-policy/view-policy.component';
 
 export const routes: Routes = [
     {
@@ -51,10 +63,25 @@ export const routes: Routes = [
         path:"view-profile",component:CustomerProfileComponent,canActivate:[AuthGuard]
     },
     {
+        path:"edit-profile",component:EditProfileComponent,canActivate:[AuthGuard]
+    },
+    {
         path:"my-policies",component:MyPoliciesComponent,canActivate:[AuthGuard]
     },
     {
+        path:"complain",component:CustomerComplainComponent,canActivate:[AuthGuard]
+    },
+    {
         path:"customer-policy",component:CustomerPolicyComponent,canActivate:[AuthGuard]
+    },
+    {
+        path:"policy-info/:id",component:PolicyInfoComponent,canActivate:[AuthGuard]
+    },
+    {
+        path:"view-policy/:id",component:ViewPolicyComponent,canActivate:[AuthGuard]
+    },
+    {
+        path:"renew-policy-info/:id",component:RenewPolicyInfoComponent,canActivate:[AuthGuard]
     },
     {
         path:"claim",component:CustomerClaimComponent,canActivate:[AuthGuard]
@@ -77,8 +104,27 @@ export const routes: Routes = [
     {
         path:"buy-policy-form",component:BuyPolicyFormComponent
     },
-    
-    
+    {
+        path:"buy-msg",component:BuyMsgComponent
+    },
+    {
+        path:"complain-options",component:ComplainOptionsComponent
+    },
+    {
+        path:"complain-form/:id",component:ComplainFormComponent
+    },
+    {
+        path:"all-complains",component:AllComplainsComponent
+    },
+    {
+        path:"all-claims",component:AllClaimsComponent
+    },
+    {
+        path:"renew-policy-form",component:RenewPolicyFormComponent,canActivate:[AuthGuard]
+    },
+    {
+        path:"renew-msg",component:RenewMsgComponent,canActivate:[AuthGuard]
+    },
 
 
 
@@ -98,8 +144,4 @@ export const routes: Routes = [
 
 
 
-
-   // {
-    //     path:"admin/admin-dashboard",component:AdminDashboardComponent
-    // },
 ];

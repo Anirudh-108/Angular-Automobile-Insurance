@@ -17,7 +17,7 @@ export class PolicyService {
     transmissionType: '',
     vehicleCondition: '',
     zoneType: '',
-    previousClaim: false,
+    previousClaim: '',
     registrationNo: '',
     policyType: '',
   });
@@ -47,6 +47,97 @@ export class PolicyService {
     );
   }
 
+  buyPolicy(vehicle: any, policyType: string, token: any): Observable<any> {
+    return this.http.post(
+      'http://localhost:8082/policy/buy/' + policyType,
+      vehicle,
+      {
+        headers: new HttpHeaders().set('Authorization', 'Bearer ' + token),
+      }
+    );
+  }
+
+  getAllActivePolicies(token: any): Observable<any> {
+    return this.http.get('http://localhost:8082/policy/getAllActivePolicies', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + token),
+    });
+  }
+
+  getAllExpiredPolicies(token: any): Observable<any> {
+    return this.http.get('http://localhost:8082/policy/getAllExpiredPolicies', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + token),
+    });
+  }
+
+  getActivePolicyById(id: any, token: any): Observable<any> {
+    return this.http.get('http://localhost:8082/policy/getActivePolicy/' + id, {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + token),
+    });
+  }
+
+  getAllComplaints(page: number, size: number, token: any): Observable<any> {
+    return this.http.get(
+      'http://localhost:8082/complaint/all-complaints?page='+page+'&size='+size,
+      {
+        headers: new HttpHeaders().set('Authorization', 'Bearer ' + token),
+      }
+    );
+  }
+
+  getNumberOfActivePolicies(token: any): Observable<any> {
+    return this.http.get(
+      'http://localhost:8082/policy/getNumberOfActivePolicies',
+      {
+        headers: new HttpHeaders().set('Authorization', 'Bearer ' + token),
+      }
+    );
+  }
+
+  getNumberOfExpiredPolicies(token: any): Observable<any> {
+    return this.http.get(
+      'http://localhost:8082/policy/getNumberOfExpiredPolicies',
+      {
+        headers: new HttpHeaders().set('Authorization', 'Bearer ' + token),
+      }
+    );
+  }
+
+  getNumberOfClaimsFiled(token: any): Observable<any> {
+    return this.http.get(
+      'http://localhost:8082/claim/getNumberOfClaimsFiled',
+      {
+        headers: new HttpHeaders().set('Authorization', 'Bearer ' + token),
+      }
+    );
+  }
+
+  getAllClaims(page: number, size: number, token: any): Observable<any> {
+    return this.http.get(
+      'http://localhost:8082/claim/all-claims?page='+page+'&size='+size,
+      {
+        headers: new HttpHeaders().set('Authorization', 'Bearer ' + token),
+      }
+    );
+  }
+
+  getVehicleByPolicyId(policyId: any, token: any): Observable<any> {
+    return this.http.get('http://localhost:8082/policy/getVehicleByPolicyId/' + policyId, {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + token),
+    });
+  }
+
+  getPolicyById(policyId: any, token: any): Observable<any> {
+    return this.http.get('http://localhost:8082/policy/getPolicyById/' + policyId, {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + token),
+    });
+  }
+
+  renewPolicy(policyId: any, token: any): Observable<any> {
+    return this.http.post('http://localhost:8082/renewal/renew/' + policyId, null,{
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + token),
+    });
+  }
+
   setVehicleInfo(
     vehicleType: string,
     manufacturerName: string,
@@ -58,7 +149,7 @@ export class PolicyService {
     transmissionType: string,
     vehicleCondition: string,
     zoneType: string,
-    previousClaim: boolean,
+    previousClaim: string,
     registrationNo: string,
     policyType: string
   ): void {
