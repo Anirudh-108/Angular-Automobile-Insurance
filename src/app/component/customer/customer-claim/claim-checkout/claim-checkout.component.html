@@ -1,0 +1,100 @@
+<div class="form-container">
+  <h2><span style="color: #7752fe">Summary</span></h2>
+  <div>
+    <div class="form-group">
+      <label for="full-name">Full Name</label>
+      <input
+        type="text"
+        class="main-input"
+        id="full-name"
+        [(ngModel)]="name"
+        disabled
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        class="main-input"
+        id="email"
+        [(ngModel)]="email"
+        disabled
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="vehicle-name">Vehicle name</label>
+      <input
+        type="text"
+        class="main-input"
+        id="vehicle-name"
+        [(ngModel)]="vehicleName"
+        disabled
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="registration-number">Registration number</label>
+      <input
+        type="text"
+        class="main-input"
+        [(ngModel)]="registrationNo"
+        id="registration-number"
+        disabled
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="policy-type">Accident date</label>
+      <input
+        type="text"
+        class="main-input"
+        id="policy-type"
+        [(ngModel)]="accidentDate"
+        disabled
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="coverage-amount">Accident location </label>
+      <input
+        type="text"
+        class="main-input"
+        id="coverage-amount"
+        [(ngModel)]="accidentLocation"
+        disabled
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="premium-amount">Damage amount</label>
+      <input
+        type="text"
+        class="main-input"
+        id="premium-amount"
+        [(ngModel)]="damageAmount"
+        disabled
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="term-length">Vehicle condition</label>
+      <input
+        type="text"
+        class="main-input"
+        id="term-length"
+        [(ngModel)]="vehicleClaimCondition"
+        disabled
+      />
+    </div>
+
+    <p>
+      By proceeding, you agree to the
+      <a href="javascript:void(0)">Terms & Conditions</a>
+    </p>
+    <button type="submit" class="continue-button" (click)="onFileClaim()">
+      File Claim
+    </button>
+  </div>
+</div>

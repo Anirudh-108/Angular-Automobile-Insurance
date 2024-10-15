@@ -1,0 +1,46 @@
+<div class="area">
+  <ul class="circles">
+    <div class="card">
+      <h2>Upload Document</h2>
+      <p>Please upload police FIR copy</p>
+
+      <div class="upload-section">
+        <div class="alert alert-success" *ngIf="firMsg != ''">
+          {{ firMsg }}
+        </div>
+        <label for="aadhaar">Police FIR Copy:</label>
+        <input
+          type="file"
+          id="fir"
+          class="upload-input"
+          accept=".jpg,.jpeg,.png,.pdf"
+          (change)="onChange($event)"
+          required
+          #fir
+        />
+      </div>
+      <button class="upload-btn" (click)="onUploadFir()">
+        Upload FIR Copy
+      </button>
+
+      <button
+        class="upload-btn-main"
+        [disabled]="!fir.value"
+        routerLink="/accident-details"
+      >
+      Report accident
+      </button>
+    </div>
+
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>

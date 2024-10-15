@@ -33,6 +33,11 @@ import { RenewPolicyFormComponent } from './component/customer/customer-renewal/
 import { RenewMsgComponent } from './component/customer/customer-renewal/renew-policy-form/renew-msg/renew-msg.component';
 import { RenewPolicyInfoComponent } from './component/customer/customer-renewal/renew-policy-info/renew-policy-info.component';
 import { ViewPolicyComponent } from './component/customer/my-policies/view-policy/view-policy.component';
+import { ChoosePolicyComponent } from './component/customer/customer-claim/choose-policy/choose-policy.component';
+import { ClaimFormComponent } from './component/customer/customer-claim/claim-form/claim-form.component';
+import { ClaimDocumentsComponent } from './component/customer/customer-claim/claim-documents/claim-documents.component';
+import { AccidentDetailsComponent } from './component/customer/customer-claim/accident-details/accident-details.component';
+import { ClaimMsgComponent } from './component/customer/customer-claim/claim-msg/claim-msg.component';
 
 export const routes: Routes = [
     {
@@ -125,7 +130,21 @@ export const routes: Routes = [
     {
         path:"renew-msg",component:RenewMsgComponent,canActivate:[AuthGuard]
     },
-
+    {
+        path:"choose-claim-policy",component:ChoosePolicyComponent,canActivate:[AuthGuard]
+    },
+    {
+        path:"claim-form",component:ClaimFormComponent,canActivate:[AuthGuard]
+    },
+    {
+        path:"claim-documents/:id",component:ClaimDocumentsComponent,canActivate:[AuthGuard]
+    },
+    {
+        path:"accident-details",component:AccidentDetailsComponent,canActivate:[AuthGuard]
+    },
+    {
+        path:"claim-msg",component:ClaimMsgComponent,canActivate:[AuthGuard]
+    },
 
 
 

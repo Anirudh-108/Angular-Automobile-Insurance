@@ -3,11 +3,13 @@ import { NavbarComponent } from '../../navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { PolicyService } from '../../../service/policy.service';
+import { VehicleService } from '../../../service/vehicle.service';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-vehicle-info-form',
   standalone: true,
-  imports: [NavbarComponent, FormsModule, RouterLink],
+  imports: [NavbarComponent, FormsModule, RouterLink, NgFor],
   templateUrl: './vehicle-info-form.component.html',
   styleUrl: './vehicle-info-form.component.css',
 })
@@ -26,11 +28,44 @@ export class VehicleInfoFormComponent {
   registrationNo: string;
   policyType: string;
 
+  arrPolicyTypes: string[] = [];
+  arrTransmissionTypes: string[] = [];
+  arrVehicleConditionTypes: string[] = [];
+  arrZoneTypes: string[] = [];
+  arrFuelTypes: string[] = [];
+
   constructor(
     private policyService: PolicyService,
+    private vehicleService: VehicleService,
     private router: Router,
     private actRoute: ActivatedRoute
-  ) {}
+  ) {
+    vehicleService.getPolicyTypes().subscribe({
+      next: (data) => {
+        this.arrPolicyTypes = data;
+      },
+    });
+    vehicleService.getTransmissionTypes().subscribe({
+      next: (data) => {
+        this.arrTransmissionTypes = data;
+      },
+    });
+    vehicleService.getVehicleConditionTypes().subscribe({
+      next: (data) => {
+        this.arrVehicleConditionTypes = data;
+      },
+    });
+    vehicleService.getZoneTypes().subscribe({
+      next: (data) => {
+        this.arrZoneTypes = data;
+      },
+    });
+    vehicleService.getFuelTypes().subscribe({
+      next: (data) => {
+        this.arrFuelTypes = data;
+      },
+    });
+  }
 
   ngOnInit(): void {
     this.vehicleType = this.actRoute.snapshot.paramMap.get('vehicle');
@@ -108,7 +143,7 @@ export class VehicleInfoFormComponent {
       this.zoneType,
       this.previousClaim,
       this.registrationNo,
-      policyType 
+      policyType
     );
   }
 }

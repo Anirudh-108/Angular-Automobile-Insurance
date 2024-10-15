@@ -138,6 +138,16 @@ export class PolicyService {
     });
   }
 
+  fileClaim(accidentDetails: any, policyId: any, token: any): Observable<any> {
+    return this.http.post(
+      'http://localhost:8082/claim/one/' + policyId,
+      accidentDetails,
+      {
+        headers: new HttpHeaders().set('Authorization', 'Bearer ' + token),
+      }
+    );
+  }
+
   setVehicleInfo(
     vehicleType: string,
     manufacturerName: string,

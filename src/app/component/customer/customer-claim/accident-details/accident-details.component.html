@@ -1,0 +1,89 @@
+<div class="area">
+  <ul class="circles">
+    <div class="form-container">
+      <h2><span style="color: #7752fe">Accident</span> details</h2>
+      <div>
+        <label for="accident-date">Accident Date</label>
+        <input
+          type="date"
+          id="accident-date"
+          [(ngModel)]="accidentDate"
+          name="accidentDate"
+          required
+        />
+
+        <label for="location">Accident Location</label>
+        <input
+          type="text"
+          id="location"
+          [(ngModel)]="accidentLocation"
+          name="accidentLocation"
+          required
+        />
+
+        <label for="damage-amount">Damage Amount (₹)</label>
+        <input
+          type="number"
+          id="damage-amount"
+          [(ngModel)]="damageAmount"
+          name="damageAmount"
+          required
+        />
+
+        <label for="vehicle-condition">Vehicle Condition</label>
+        <select
+          id="vehicleClaimCondition"
+          name="vehicleClaimCondition"
+          [(ngModel)]="vehicleClaimCondition"
+          required
+        >
+          <option value="" disabled>Select Vehicle Condition</option>
+          <option value="No_dents">No dents</option>
+          <option value="Few_dents_with_few_scratches">
+            Few dents with few scratches
+          </option>
+          <option value="Medium_dents_with_medium_scratches">
+            Medium dents with medium scratches
+          </option>
+          <option value="More_dents_with_scratches">
+            More dents with scratches
+          </option> 
+        </select>
+
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          [(ngModel)]="description"
+          name="description"
+          rows="4"
+          required
+        ></textarea>
+
+        <button
+          type="submit"
+          [disabled]="
+            !accidentDate ||
+            !accidentLocation ||
+            !damageAmount ||
+            !vehicleClaimCondition ||
+            !description
+          "
+          (click)="onCheckout()"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>

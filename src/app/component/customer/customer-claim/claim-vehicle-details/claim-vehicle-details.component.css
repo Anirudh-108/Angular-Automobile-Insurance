@@ -115,7 +115,7 @@
   .back-button:hover {
     background-color: #bbb;
   }
-   
+  
   .continue-button {
     background-color: #4caf50;
     color: #fff;
@@ -126,6 +126,6 @@
   }
   
   .main-form {
-    height: 20rem;
+    height: 20rem; 
   }
   

@@ -1,0 +1,64 @@
+<app-customer-navbar></app-customer-navbar>
+<div class="container">
+  <div class="left-section">
+    <h2>File a <span style="color: #7752fe">Claim</span></h2>
+    <p class="para">
+      Select a policy from the options below to start filing your claim quickly
+      and easily.
+    </p>
+
+    <div *ngIf="policies.length == 0">
+      <div class="length-card no-expired-policy">
+        <div class="length-card-content">
+          <h2>No Policies Found</h2>
+          <p>
+            You currently don't have any active policies. Please add a policy to
+            get started.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="policy-card" *ngFor="let p of policies">
+      <div class="policy-info">
+        <img src="images/active-policy.png" alt="Policy Image" />
+        <div>
+          <h3>{{ p.manufacturerName + " " + p.modelName }}</h3>
+          <p>{{ p.policyType }} insurance</p>
+        </div>
+      </div>
+      <div class="policy-actions">
+        <button (click)="onFileClaim(p.policyId)">File claim</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <div class="features">
+      <div class="feature-card">
+        <h3>⚡ Fast Claim Filing</h3>
+        <p>
+          Submit your claim in minutes with our simple, streamlined process.
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>💼 24/7 Support</h3>
+        <p>
+          Get round-the-clock assistance to help you through the claim process.
+        </p>
+      </div>
+      <div class="feature-card below">
+        <h3>📱 File from Anywhere</h3>
+        <p>
+          File your claim online or through our mobile app, wherever you are.
+        </p>
+      </div>
+      <div class="feature-card below">
+        <h3>🔍 Transparent Tracking</h3>
+        <p>
+          Track the progress of your claim with real-time updates at every step.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -65,8 +65,8 @@ export class CheckoutComponent {
 
     this.policyService.policyInfo$.subscribe((policy) => {
       this.policyType = policy.mainPolicyType;
-      this.coverageAmount = '₹ '+policy.coverageAmount;
-      this.premiumAmount = '₹ '+policy.premiumAmount;
+      this.coverageAmount = '₹ ' + policy.coverageAmount;
+      this.premiumAmount = '₹ ' + policy.premiumAmount;
       this.termLength = policy.termLength;
     });
   }
@@ -90,6 +90,14 @@ export class CheckoutComponent {
     let token = localStorage.getItem('token');
     this.policyService.buyPolicy(vehicleDetails, policyType, token).subscribe({
       next: (data) => {
+        this.customerService.sendEmail().subscribe({
+          next: (data) => {
+            console.log('email sent successfully...');
+          },
+          error: (err) => {
+            console.log('email not sent..');
+          },
+        });
         this.router.navigateByUrl('/buy-msg');
       },
       error: (err) => {
