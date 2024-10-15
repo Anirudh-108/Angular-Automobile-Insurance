@@ -148,6 +148,12 @@ export class PolicyService {
     );
   }
 
+  getChartData(token: any): Observable<any> {
+    return this.http.get('http://localhost:8082/policy/getChartData', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + token),
+    });
+  }
+
   setVehicleInfo(
     vehicleType: string,
     manufacturerName: string,

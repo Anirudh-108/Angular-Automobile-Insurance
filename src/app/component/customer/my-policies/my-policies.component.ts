@@ -23,35 +23,7 @@ export class MyPoliciesComponent implements OnInit {
   specializationData: any;
   pieOptions: any;
 
-  constructor(private policyService: PolicyService, private router: Router) {
-    let token = localStorage.getItem('token');
-    this.policyService.getNumberOfActivePolicies(token).subscribe({
-      next: (data) => {
-        this.chartData.push(data.msg);
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });
-
-    this.policyService.getNumberOfExpiredPolicies(token).subscribe({
-      next: (data) => {
-        this.chartData.push(data.msg);
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });
-
-    this.policyService.getNumberOfClaimsFiled(token).subscribe({
-      next: (data) => {
-        this.chartData.push(data.msg);
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });
-  }
+  constructor(private policyService: PolicyService, private router: Router) {}
 
   ngOnInit() {
     let token = localStorage.getItem('token');
@@ -83,83 +55,94 @@ export class MyPoliciesComponent implements OnInit {
     );
     const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
-    this.aptData = {
-      labels: ['Active', 'Expired', 'Claims'],
-      datasets: [
-        {
-          label: 'Policies',
-          // data: this.chartData,
-          data: [3, 1, 2],
-          backgroundColor: ['#5DADE2', '#58D68D', '#F7DC6F'],
-          borderColor: [
-            'rgb(255, 159, 64)',
-            'rgb(75, 192, 192)',
-            'rgb(54, 162, 235)',
+    this.policyService.getChartData(token).subscribe({
+      next: (data) => {
+        this.chartData.push(data.activePolicies);
+        this.chartData.push(data.expiredPolicies);
+        this.chartData.push(data.claimFiled);
+
+        console.log(this.chartData);
+
+        this.aptData = {
+          labels: ['Active', 'Expired', 'Claims'],
+          datasets: [
+            {
+              label: 'Policies',
+              data: this.chartData,
+              backgroundColor: ['#5DADE2', '#58D68D', '#F7DC6F'],
+              borderColor: [
+                'rgb(255, 159, 64)',
+                'rgb(75, 192, 192)',
+                'rgb(54, 162, 235)',
+              ],
+              borderWidth: 0.5,
+            },
           ],
-          borderWidth: 0.5,
-        },
-      ],
-    };
+        };
 
-    this.barOptions = {
-      responsive: false,
-      maintainAspectRatio: true,
+        this.barOptions = {
+          responsive: false,
+          maintainAspectRatio: true,
 
-      plugins: {
-        legend: {
-          labels: {
-            display: false,
-            color: textColor,
+          plugins: {
+            legend: {
+              labels: {
+                display: false,
+                color: textColor,
+              },
+            },
           },
-        },
+
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                color: textColorSecondary,
+              },
+              grid: {
+                color: surfaceBorder,
+                drawBorder: false,
+              },
+            },
+            x: {
+              ticks: {
+                color: textColorSecondary,
+              },
+              grid: {
+                color: surfaceBorder,
+                drawBorder: false,
+              },
+            },
+            maintainAspectRatio: false,
+          },
+        };
+
+        //----------------------------PieChart-------------------------------
+        this.specializationData = {
+          labels: ['Active Policies', 'Expired Policies', 'Claims Filed'],
+          datasets: [
+            {
+              data: this.chartData,
+              backgroundColor: ['#7E60BF', '#E4B1F0', '#433878'],
+              borderColor: ['#F5F5F7', '#F5F5F7', '#F5F5F7'],
+            },
+          ],
+        };
+        this.pieOptions = {
+          plugins: {
+            legend: {
+              labels: {
+                usePointStyle: true,
+                color: textColor,
+              },
+            },
+          },
+        };
       },
-
-      scales: {
-        y: {
-          beginAtZero: true,
-          ticks: {
-            color: textColorSecondary,
-          },
-          grid: {
-            color: surfaceBorder,
-            drawBorder: false,
-          },
-        },
-        x: {
-          ticks: {
-            color: textColorSecondary,
-          },
-          grid: {
-            color: surfaceBorder,
-            drawBorder: false,
-          },
-        },
-        maintainAspectRatio: false,
+      error: (err) => {
+        console.log(err);
       },
-    };
-
-    //----------------------------PieChart-------------------------------
-    this.specializationData = {
-      labels: ['Active Policies', 'Expired Policies', 'Claims Filed'],
-      datasets: [
-        {
-          // data: this.chartData,
-          data: [3, 1, 2],
-          backgroundColor: ['#7E60BF', '#E4B1F0', '#433878'],
-          borderColor: ['#F5F5F7', '#F5F5F7', '#F5F5F7'],
-        },
-      ],
-    };
-    this.pieOptions = {
-      plugins: {
-        legend: {
-          labels: {
-            usePointStyle: true,
-            color: textColor,
-          },
-        },
-      },
-    };
+    });
   }
 
   onClick(vehicle: string) {
