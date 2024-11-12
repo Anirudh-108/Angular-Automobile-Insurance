@@ -1,0 +1,27 @@
+<div *ngFor="let d of dataArray">
+  <div class="card">
+    <div class="card-header">
+      <img src="{{ d.avatar }}" alt="" />
+    </div>
+    <div class="card-footer">
+      <div>{{ d.id }}</div>
+      <div>{{ d.email }}</div>
+      <div>{{ d.first_name }}</div>
+      <div>{{ d.last_name }}</div>
+    </div>
+  </div>
+</div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center modern-pagination">
+      <li class="page-item">
+        <button class="page-link" [disabled]="page==1" (click)="onPrev()">Prev</button>
+      </li>
+      <span *ngFor="let n of numArry">
+        <button class="page-link" (click)="onPageNumberClick(n)">{{n+1}}</button>
+      </span>
+      <li class="page-item">
+        <button class="page-link" [disabled]="page==2 " (click)="onNext()">Next</button>
+      </li>
+    </ul>
+  </nav>

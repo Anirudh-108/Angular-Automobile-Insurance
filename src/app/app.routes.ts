@@ -38,8 +38,13 @@ import { ClaimFormComponent } from './component/customer/customer-claim/claim-fo
 import { ClaimDocumentsComponent } from './component/customer/customer-claim/claim-documents/claim-documents.component';
 import { AccidentDetailsComponent } from './component/customer/customer-claim/accident-details/accident-details.component';
 import { ClaimMsgComponent } from './component/customer/customer-claim/claim-msg/claim-msg.component';
+import { AssessmentComponent } from './component/assessment/assessment.component';
 
 export const routes: Routes = [
+    {
+        path:"assessment",component:AssessmentComponent
+    },
+
     {
         path:"",component:LandingPageComponent
     },
